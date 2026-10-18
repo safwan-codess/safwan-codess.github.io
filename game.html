@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Snake // Code-Cursor Edition | Safwan Abdulla C P</title>
+  <meta name="description" content="A glowing code-cursor snake game built with plain HTML, CSS, and JavaScript.">
+  <link rel="stylesheet" href="game.css?v=2">
+</head>
+<body>
+  <div class="game-container">
+    <!-- Top Navigation / Header -->
+    <header class="game-header">
+      <a href="index.html" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        <span>Back to Home</span>
+      </a>
+      <div class="score-board">
+        <span class="score-label">Score</span>
+        <span id="score" class="score-value">0</span>
+      </div>
+    </header>
+
+    <!-- Game Title & Subtle Hint -->
+    <div class="game-info">
+      <h1 class="game-title">Code-Cursor Snake</h1>
+      <p class="game-instructions">Catch the bugs 🐛 • Wraps through walls • Arrow keys or touch D-pad</p>
+    </div>
+
+    <!-- Canvas Play Area Wrapper -->
+    <div class="canvas-wrapper" id="canvas-wrapper">
+      <canvas id="game-canvas" width="400" height="400" aria-label="Snake game board"></canvas>
+
+      <!-- Game Over / Victory Modal Overlay -->
+      <div class="game-overlay" id="game-overlay" aria-hidden="true">
+        <div class="modal-card">
+          <div class="modal-icon" id="modal-icon">💀</div>
+          <h2 class="modal-title" id="modal-title">Game Over</h2>
+          <p class="modal-message" id="modal-message">You hit yourself!</p>
+          <div class="modal-final-score">
+            <span>Final Score:</span>
+            <strong id="final-score">0</strong>
+          </div>
+          <button id="restart-btn" class="btn btn-primary">Play Again</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- On-screen Arrow Controls for Mobile/Touch -->
+    <div class="dpad-controls" aria-label="Game controls">
+      <div class="dpad-row">
+        <button type="button" class="dpad-btn" id="btn-up" aria-label="Move Up">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m18 15-6-6-6 6"/>
+          </svg>
+        </button>
+      </div>
+      <div class="dpad-row dpad-middle">
+        <button type="button" class="dpad-btn" id="btn-left" aria-label="Move Left">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6"/>
+          </svg>
+        </button>
+        <button type="button" class="dpad-btn" id="btn-down" aria-label="Move Down">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </button>
+        <button type="button" class="dpad-btn" id="btn-right" aria-label="Move Right">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m9 18 6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js?v=2"></script>
+</body>
+</html>

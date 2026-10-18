@@ -146,6 +146,21 @@ body {
   transform: translateY(-2px);
 }
 
+.btn-game {
+  background-color: var(--accent-tint);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+}
+
+.btn-game:hover,
+.btn-game:focus {
+  background-color: var(--accent);
+  color: #0a0e17;
+  border-color: var(--accent);
+  box-shadow: var(--accent-glow);
+  transform: translateY(-2px);
+}
+
 /* Section Common */
 .section {
   padding: 2.5rem 0;
